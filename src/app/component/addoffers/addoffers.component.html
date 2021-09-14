@@ -1,0 +1,100 @@
+<!-- 
+<div class="container">
+    <form novalidate [formGroup]="addOfferForm" style="margin-left: 400px;" (ngSubmit)="addOfferDetails()">
+  <fieldset>
+    <div class="form-group">
+        <div class="col-md-6">
+
+            <label for="roomType">*Room Type</label><br><br>
+            <select class="form-control form-control-lg"   name="roomType" formControlName="roomType" ngModel required>
+                <option selected="selected">--Select---</option>
+                <option>AC</option>
+                <option>Normal</option>
+                <option>Deluxe</option>
+               
+            </select>
+            <div class="alert alert-danger"
+            *ngIf="addOfferForm.get('roomType').hasError('required') && addOfferForm.get('roomType').dirty">
+                 Room Type is required
+            </div>
+      </div>
+      </div>
+      <div class="form-group">
+        <label>*Offer Name:</label>
+        <input type="text" class="form-control" formControlName="offerName">
+        <div class="alert alert-danger"
+            *ngIf="addOfferForm.get('offerName').hasError('required') && addOfferForm.get('offerName').dirty">
+            Offer Name is required
+        </div>
+    </div>
+    <div class="form-group">
+        <label>*From Date:</label>
+        <input type="date" class="form-control" formControlName="offerFromDate">
+        <div class="alert alert-danger"
+            *ngIf="addOfferForm.get('offerFromDate').hasError('required') && addOfferForm.get('offerFromDate').dirty">
+            Offer From Date is required
+        </div>
+    </div>
+   
+   <div class="form-group">
+        <label>*To Date:</label>
+        <input type="date" class="form-control" formControlName="offerToDate">
+        <div class="alert alert-danger"
+            *ngIf="addOfferForm.get('offerToDate').hasError('required') && addOfferForm.get('offerToDate').dirty">
+            Offer To Date is required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-6">
+
+            <label for="offerDetails">*Offer Details</label><br><br>
+            <select class="form-control form-control-lg"   name="offerDetails" formControlName="offerDetails" ngModel required>
+                <option selected="selected">--Select---</option>
+                <option>LateNightDrinksFree</option>
+                <option>BreakfastFree</option>
+                <option>EveningDessertFree</option>
+            </select>
+            <div class="alert alert-danger"
+            *ngIf="addOfferForm.get('offerDetails').hasError('required') && addOfferForm.get('offerDetails').dirty">
+               Offer Details is required
+            </div>
+      </div>
+      </div>
+
+     Choose "Yes" for accepecting above Terms and Condition else select "No"
+    <div class="form-group">
+        <div class="col-md-6">
+
+            <label for="termsAndConditions">*Terms And Conditions</label><br><br>
+            <select class="form-control form-control-lg"   name="termsAndConditions" formControlName="termsAndConditions" ngModel required>
+                <option selected="selected">--Select---</option>
+                <option>Yes</option>
+                <option>No</option>    
+            </select>
+            <div class="alert alert-danger"
+            *ngIf="addOfferForm.get('termsAndConditions').hasError('required') && addOfferForm.get('termsAndConditions').dirty">
+              Terms And Conditions is required
+            </div>
+      </div>
+      </div>
+
+      <div class="form-group">
+        <label>*Discount Percentage:</label>
+        <input type="number" class="form-control" formControlName="discountPercentage" value=0>
+        <div class="alert alert-danger"
+            *ngIf="addOfferForm.get('discountPercentage').hasError('required') && addOfferForm.get('discountPercentage').dirty">
+             Discount Percentage is required
+        </div>
+    </div>
+
+    <td>
+        <button type="submit" class="btn btn-primary" [disabled] ="addOfferForm.invalid">Add Offer</button>&nbsp;&nbsp;<button class="btn btn-success" type="reset">Reset</button>
+    </td>
+
+   <br><br>
+   <button  class="btn btn-danger">Back</button> 
+
+  </fieldset>
+    </form>
+</div> -->

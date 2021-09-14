@@ -1,0 +1,39 @@
+<h3>Offers list</h3><br><br>
+<div>
+  <font color=red>{{errorMessage}}</font>
+   <div class="reglist">
+  
+            <table class="table table-striped">
+            <thead>
+            <tr>
+            <th>Offer Id</th>
+            <th>Room Type</th>
+            <th>Offer Name</th>
+            <th>Offer From Date</th>
+            <th>Offer To Date</th>
+            <th>Terms And Conditions</th>
+            <th>Terms And Conditions</th>
+            <th>Discount Percentage</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let offer of offer; let i = index">
+            <td>{{offer.offerId}}</td>
+            <td>{{offer.roomType}}</td>
+            <td>{{offer.offerName}}</td>
+            <td>{{offer.offerFromDate}}</td>
+            <td>{{offer.offerToDate}}</td>
+            <td>{{offer.offerDetails}}</td>
+            <td>{{offer.termsAndConditions}}</td>
+            <td>{{offer.discountPercentage}}</td>
+      
+            <td><button type="button" class="btn btn-info" >Edit</button></td>
+            <td><button type="button" class="btn btn-danger">Delete</button></td>
+            </tr>
+            </tbody>
+            </table>
+      </div>
+      <button class="btn btn-primary">Back</button>
+</div>
