@@ -36,10 +36,13 @@ export class OfferoperationsComponent implements OnInit {
     
     this.offerService.getOfferById(this.searchOfferForm.get('offerId')?.value).subscribe(
       res=>{
-        console.log(res)
+   
         if(res==null)
         { 
-          window.alert("Offer Id:"+this.searchOfferForm.get('offerId')?.value+"Doesn't exists!")
+          window.alert("Offer Id:"+this.searchOfferForm.get('offerId')?.value+" Doesn't exists!")
+          this.showTextBox=false
+          this.show=false
+          this.viewOffer=false
           this.router.navigate(['offeroperations'])
         }
         else{
