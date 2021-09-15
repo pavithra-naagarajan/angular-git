@@ -8,14 +8,16 @@ import { AddoffersComponent } from './component/addoffers/addoffers.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Offer } from './model/offer';
 import { OffersComponent } from './component/offers/offers.component';
-import { Router } from '@angular/router';
-
+import { OfferoperationsComponent } from './component/offeroperations/offeroperations.component';
+import { UpdateoffersComponent } from './component/updateoffers/updateoffers.component';
 @NgModule({
   declarations: [
     AppComponent,
     ViewoffersComponent,
     AddoffersComponent,
-    OffersComponent
+    OffersComponent,
+    OfferoperationsComponent,
+    UpdateoffersComponent
   ],
   imports: [
     BrowserModule,
@@ -28,12 +30,5 @@ import { Router } from '@angular/router';
 })
 export class AppModule {
 
-  constructor(public router:Router)
-  {
-
-  }
-  offers()
-  {
-    this.router.navigate(['offers']);
-  }
+  
  }

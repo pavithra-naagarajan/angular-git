@@ -28,11 +28,11 @@
             <td>{{o.offerDetails}}</td>
             <td>{{o.discountPercentage}}</td>
       
-            <td><button type="button" class="btn btn-info">Edit</button></td>
+            <td><button type="button" class="btn btn-info" (click)="editOffer(o.offerId)">Edit</button></td>
             <td><button type="button" class="btn btn-danger" (click)="deleteOffer(o.offerId)">Delete</button></td>
             </tr>
             </tbody>
             </table>
       </div>
-      <button class="btn btn-primary">Back</button>
+     <a href="offeroperations"><button class="btn btn-primary">Back</button></a>
 </div>

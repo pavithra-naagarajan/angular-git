@@ -14,4 +14,9 @@ export class AppComponent {
 
   }
 
+  offers()
+  {
+    this.router.navigate(['']);
+  }
+
 }

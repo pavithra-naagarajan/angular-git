@@ -49,6 +49,22 @@ export class OfferService {
     );
     }
 
+    //update offers
+    updateOffer(offer :Offer): Observable<Offer> {
+      return this.http.put<Offer>(offerUrl, offer)
+        .pipe(
+          retry(0),
+          catchError(this.errorHandler)
+        )
+    }
+
+    //get offer by id
+  getOfferById(offerId: number): Observable<Offer> {
+    return this.http.get(`${offerUrl}/${offerId}`)
+      
+  }
+  
+
     errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
       let errorMessage = '';
       if (error.error instanceof ErrorEvent) {

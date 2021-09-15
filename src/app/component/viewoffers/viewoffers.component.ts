@@ -47,5 +47,8 @@ export class ViewoffersComponent implements OnInit {
           this.successMessage = "Offer Id: "+offerId +" :   successfully deleted"
   }
 
-
+  editOffer(offerId:number)
+  {
+    this.router.navigate(['updateoffers',offerId])
+  }
 }

@@ -1,0 +1,58 @@
+<a href="showoffers"><button class="btn btn-primary">Show Offers</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="addoffers"><button class="btn btn-primary">Add Offers</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="btn btn-primary" (click)=searchOffer()>Search Offer</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href=""><button class="btn btn-primary">Back</button></a>
+<!--For search text box-->
+<div *ngIf="showTextBox">
+    <br><br><br>
+    <form novalidate [formGroup]="searchOfferForm" (ngSubmit)='searchOfferById()' style="margin-left: 400px;" >
+      
+          <div class="form-group">
+              <label style="margin-left: 250px;width: 350px;">*Offer Id:</label>
+              <input type="text" class="form-control" formControlName="offerId"  style="margin-left: 250px;width: 350px;">
+              <div style="margin-left: 250px;width: 350px;" class="alert alert-danger"
+                  *ngIf="searchOfferForm.get('offerId').hasError('required') && searchOfferForm.get('offerId').dirty">
+                  Offer Id is required
+              </div>
+              </div>
+              <br><br>
+              <input style="margin-left: 250px;width: 350px;" type="submit" value="Search Offer" class="btn btn-info" [disabled]="searchOfferForm.invalid">
+              </form>
+              <br><br>
+              </div>
+
+<!--to view the record of a offer-->
+<div *ngIf="viewOffer">
+<br><br><br>
+   <div class="reglist">  
+            <table class="table table-striped">
+            <thead>
+            <tr>
+            <th>Offer Id</th>
+            <th>Room Type</th>
+            <th>Offer Name</th>
+            <th>Offer From Date</th>
+            <th>Offer To Date</th>
+            <th>Offer</th>
+            <th>Discount Percentage</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>{{offer.offerId}}</td>
+            <td>{{offer.roomType}}</td>
+            <td>{{offer.offerName}}</td>
+            <td>{{offer.offerFromDate}}</td>
+            <td>{{offer.offerToDate}}</td>
+            <td>{{offer.offerDetails}}</td>
+            <td>{{offer.discountPercentage}}</td>
+      
+            </tr>
+            </tbody>
+            </table>
+      </div><br><br><br>
+      <button type="button" class="btn btn-success" (click)="editOffer(offer.offerId)">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <button type="button" class="btn btn-danger" (click)="deleteOffer(offer.offerId)">Delete</button>&nbsp;&nbsp;&nbsp;&nbsp;
+     <a href="offeroperations"><button class="btn btn-info">Back</button></a>
+</div>
+
