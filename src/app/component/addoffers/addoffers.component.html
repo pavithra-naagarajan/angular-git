@@ -1,11 +1,9 @@
-<!-- 
-<div class="container">
-    <form novalidate [formGroup]="addOfferForm" style="margin-left: 400px;" (ngSubmit)="addOfferDetails()">
+<div class="reglist">
+    <form novalidate [formGroup]="addOfferForm" style="margin-left: 650px;width: 450px;" (ngSubmit)="addOffer()">
   <fieldset>
     <div class="form-group">
-        <div class="col-md-6">
-
-            <label for="roomType">*Room Type</label><br><br>
+        <div class="col-md-6" style="width: 450px;">
+            <label for="roomType">*Room Type</label>
             <select class="form-control form-control-lg"   name="roomType" formControlName="roomType" ngModel required>
                 <option selected="selected">--Select---</option>
                 <option>AC</option>
@@ -18,7 +16,7 @@
                  Room Type is required
             </div>
       </div>
-      </div>
+      </div><br>
       <div class="form-group">
         <label>*Offer Name:</label>
         <input type="text" class="form-control" formControlName="offerName">
@@ -26,7 +24,7 @@
             *ngIf="addOfferForm.get('offerName').hasError('required') && addOfferForm.get('offerName').dirty">
             Offer Name is required
         </div>
-    </div>
+    </div><br>
     <div class="form-group">
         <label>*From Date:</label>
         <input type="date" class="form-control" formControlName="offerFromDate">
@@ -34,7 +32,7 @@
             *ngIf="addOfferForm.get('offerFromDate').hasError('required') && addOfferForm.get('offerFromDate').dirty">
             Offer From Date is required
         </div>
-    </div>
+    </div><br>
    
    <div class="form-group">
         <label>*To Date:</label>
@@ -43,12 +41,12 @@
             *ngIf="addOfferForm.get('offerToDate').hasError('required') && addOfferForm.get('offerToDate').dirty">
             Offer To Date is required
         </div>
-    </div>
+    </div><br>
 
     <div class="form-group">
-        <div class="col-md-6">
+        <div class="col-md-6" style="width: 450px;">
 
-            <label for="offerDetails">*Offer Details</label><br><br>
+            <label for="offerDetails">*Offer Details</label>
             <select class="form-control form-control-lg"   name="offerDetails" formControlName="offerDetails" ngModel required>
                 <option selected="selected">--Select---</option>
                 <option>LateNightDrinksFree</option>
@@ -60,33 +58,29 @@
                Offer Details is required
             </div>
       </div>
-      </div>
-
-     Choose "Yes" for accepecting above Terms and Condition else select "No"
-    <div class="form-group">
-        <div class="col-md-6">
-
-            <label for="termsAndConditions">*Terms And Conditions</label><br><br>
-            <select class="form-control form-control-lg"   name="termsAndConditions" formControlName="termsAndConditions" ngModel required>
-                <option selected="selected">--Select---</option>
-                <option>Yes</option>
-                <option>No</option>    
-            </select>
-            <div class="alert alert-danger"
-            *ngIf="addOfferForm.get('termsAndConditions').hasError('required') && addOfferForm.get('termsAndConditions').dirty">
-              Terms And Conditions is required
-            </div>
-      </div>
-      </div>
+      </div><br>
 
       <div class="form-group">
         <label>*Discount Percentage:</label>
-        <input type="number" class="form-control" formControlName="discountPercentage" value=0>
+        <input type="text" class="form-control" formControlName="discountPercentage">
         <div class="alert alert-danger"
             *ngIf="addOfferForm.get('discountPercentage').hasError('required') && addOfferForm.get('discountPercentage').dirty">
              Discount Percentage is required
         </div>
-    </div>
+        <div class="alert alert-danger"
+            *ngIf="addOfferForm.get('discountPercentage').hasError('min') && addOfferForm.get('discountPercentage').dirty">
+             Discount Percentage sholud be greater than 0
+        </div>
+    </div><br><br>
+
+    <div class="form-group">
+        
+        <label for="termsAndConditions"> &nbsp;&nbsp;&nbsp;&nbsp; This offer will be shown to all customers while adding  <br><input type="checkbox" formControlName="termsAndConditions" ngModel required> &nbsp; a room and check this to make sure your details are <br> &nbsp;&nbsp;&nbsp;&nbsp; correct about offer</label><br>
+            <div class="alert alert-danger"
+            *ngIf="addOfferForm.get('termsAndConditions').hasError('required') && addOfferForm.get('termsAndConditions').dirty">
+              Terms And Conditions is required
+            </div>
+      </div><br><br>
 
     <td>
         <button type="submit" class="btn btn-primary" [disabled] ="addOfferForm.invalid">Add Offer</button>&nbsp;&nbsp;<button class="btn btn-success" type="reset">Reset</button>
@@ -97,4 +91,4 @@
 
   </fieldset>
     </form>
-</div> -->
+</div>

@@ -6,21 +6,34 @@ import { AppComponent } from './app.component';
 import { ViewoffersComponent } from './component/viewoffers/viewoffers.component';
 import { AddoffersComponent } from './component/addoffers/addoffers.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Offer } from './model/offer';
+import { OffersComponent } from './component/offers/offers.component';
+import { Router } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewoffersComponent,
-    AddoffersComponent
+    AddoffersComponent,
+    OffersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(public router:Router)
+  {
+
+  }
+  offers()
+  {
+    this.router.navigate(['offers']);
+  }
+ }

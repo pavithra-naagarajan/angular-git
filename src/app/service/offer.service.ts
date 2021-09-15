@@ -30,6 +30,25 @@ export class OfferService {
         )
     }
     
+    //to delete a Offer
+     //http://localhost:9003/hoteloffer
+     deleteOffer(offerId:number)
+     {
+       return this.http.delete(`${offerUrl}/${offerId}`)
+       .pipe
+       (
+         retry(1),
+         catchError(this.errorHandler)
+       )
+     }
+
+     //save Offer
+    addOffer(offer :Offer) :Observable<Offer>{
+      return this.http.post<Offer>(offerUrl,offer,this.httpOptions).pipe(retry(0),
+      catchError(this.errorHandler)
+    );
+    }
+
     errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
       let errorMessage = '';
       if (error.error instanceof ErrorEvent) {

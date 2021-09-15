@@ -1,6 +1,7 @@
 <h3>Offers list</h3><br><br>
 <div>
-  <font color=red>{{errorMessage}}</font>
+  <h4><font color=green>{{successMessage }}</font></h4><br>
+  <h4><font color=red>{{errorMessage}}</font></h4>
    <div class="reglist">
   
             <table class="table table-striped">
@@ -11,26 +12,24 @@
             <th>Offer Name</th>
             <th>Offer From Date</th>
             <th>Offer To Date</th>
-            <th>Terms And Conditions</th>
-            <th>Terms And Conditions</th>
+            <th>Offer</th>
             <th>Discount Percentage</th>
             <th>Edit</th>
             <th>Delete</th>
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let offer of offer; let i = index">
-            <td>{{offer.offerId}}</td>
-            <td>{{offer.roomType}}</td>
-            <td>{{offer.offerName}}</td>
-            <td>{{offer.offerFromDate}}</td>
-            <td>{{offer.offerToDate}}</td>
-            <td>{{offer.offerDetails}}</td>
-            <td>{{offer.termsAndConditions}}</td>
-            <td>{{offer.discountPercentage}}</td>
+            <tr *ngFor="let o of offer; let i = index">
+            <td>{{o.offerId}}</td>
+            <td>{{o.roomType}}</td>
+            <td>{{o.offerName}}</td>
+            <td>{{o.offerFromDate}}</td>
+            <td>{{o.offerToDate}}</td>
+            <td>{{o.offerDetails}}</td>
+            <td>{{o.discountPercentage}}</td>
       
-            <td><button type="button" class="btn btn-info" >Edit</button></td>
-            <td><button type="button" class="btn btn-danger">Delete</button></td>
+            <td><button type="button" class="btn btn-info">Edit</button></td>
+            <td><button type="button" class="btn btn-danger" (click)="deleteOffer(o.offerId)">Delete</button></td>
             </tr>
             </tbody>
             </table>
